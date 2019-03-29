@@ -1,10 +1,13 @@
 安装
-Pip install celery   (4.2)
+Pip install celery
+
 Pip install redis
+
 Pip install eventlet
 
 
 https://www.cnblogs.com/cwp-bg/p/8759638.html celery参数详解
+
 https://www.cnblogs.com/huang-yc/p/10073167.html 参数个数不对
 
 先启动redis_server, 再启动celery, 再运行app
