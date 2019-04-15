@@ -5,7 +5,9 @@ __title__ = ''
 __mtime__ = '2019/4/15'
 """
 
+# 字符串返回同时大小写变换
 class Invert:
+    # 反转
     def invert(self, origin_string):
         new_str_list = []
         str_len = len(origin_string)
@@ -14,7 +16,8 @@ class Invert:
             new_str_list.append(new_char)
 
         return "".join(new_str_list)
-
+    
+    # 大小写变换
     def trans(self, original_char):
         if original_char.islower():
             return original_char.upper()
