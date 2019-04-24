@@ -54,6 +54,20 @@ class Solution:
             re.next = ListNode(1)
 
         return  result.next
+       
+    def addTwoNumbersSecond(self, l1: ListNode, l2: ListNode, carry=0) -> ListNode:
+        # 两个链表都没有，但是有carry的时候说明要进一位
+        if not (l1 or l2): return ListNode(1) if carry else None
+        # 同一位置相加
+        if l1: self.print_linked_list(l1)
+        if l2: self.print_linked_list(l2)
+        #     l1 = None or 1的结果是 l1 = 1
+        l1, l2 = l1 or ListNode(0), l2 or ListNode(0)
+        print(l1.val)
+        print(l2.val)
+        val = l1.val + l2.val + carry
+        l1.val, l1.next = val % 10, self.addTwoNumbers(l1.next, l2.next, val > 9)
+        return l1
 
 if __name__ == "__main__":
     l1 = ListNode(1)
@@ -67,3 +81,5 @@ if __name__ == "__main__":
     solution.print_linked_list(l2)
     l3 = solution.addTwoNumbers(l1, l2)
     solution.print_linked_list(l3)
+    l4 = solution.addTwoNumbersSecond(l1, l2)
+    solution.print_linked_list(l4)
